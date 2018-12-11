@@ -203,7 +203,7 @@ public class MapDisplay implements getPositions{
 		}
 	}
 	
-	public void turningOnCurorColor() {
+	public void turningOnCursorColor() {
 		cursorColor = true;
 
 		changeCursorColor();
@@ -272,7 +272,6 @@ public class MapDisplay implements getPositions{
 	public void cursorRight() {
 		if (cursor.cursorCols < numCols - 1 ) {
 			replaceTileInMainCanvasToOriginal(cursor.cursorCols, cursor.cursorRows);
-
 			cursor.cursorCols ++;
 			changeCursorColor();
 
