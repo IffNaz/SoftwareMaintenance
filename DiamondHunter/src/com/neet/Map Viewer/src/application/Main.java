@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -15,6 +16,7 @@ public class Main extends Application {
 	
 	public BorderPane root;
 	public TilePane tile;
+	
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -53,6 +55,7 @@ public class Main extends Application {
 		root.setCenter(tile);
 		
 		}
+	
 	public void initialise() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -60,9 +63,10 @@ public class Main extends Application {
             root = (BorderPane) loader.load();
 
             Scene scene = new Scene(root);
-            
+          
             primaryStage.setScene(scene);
             primaryStage.show();
+            primaryStage.setResizable(false);
             
         } catch (IOException e) {
             e.printStackTrace();
