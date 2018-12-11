@@ -11,9 +11,9 @@ public class MapCursor {
 	
 	public MapCursor() {
 		imageOption = new Image[3];
-		imageOption[0] = new Image(MapCursor.class.getResourceAsStream("./items.gif"));//Place Holder Sprites
-		imageOption[1] = new Image(MapCursor.class.getResourceAsStream("./items.gif"));//Place Holder Sprites
-		imageOption[2] = new Image(MapCursor.class.getResourceAsStream("./items.gif"));//Place Holder Sprites
+		imageOption[0] = new Image(MapCursor.class.getResourceAsStream("./green_cursor.gif"));
+		imageOption[1] = new Image(MapCursor.class.getResourceAsStream("./red_cursor.gif"));
+		imageOption[2] = new Image(MapCursor.class.getResourceAsStream("./normal_cursor.gif"));
 		cursorCols = 17;
 		cursorRows = 17;
 		
