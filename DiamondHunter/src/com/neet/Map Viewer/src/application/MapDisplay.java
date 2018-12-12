@@ -60,14 +60,14 @@ public class MapDisplay implements getPositions{
 	public Image items;
 	public boolean axePut = false;
 	public boolean boatPut = false;
-	
+//Takes the .map file as a string of numbers and prints out appropriate sprites based on the data received into a Map Matrix
 	public void loadMapFile(String mapFile) {
 		try {
 			InputStream in = getClass().getResourceAsStream(mapFile);
 			if (in == null) {
-				System.out.print("X");
+				System.out.print("Map not Found!");
 			} else {
-				System.out.println("Y");
+				System.out.println("Map Successfully Loaded!");
 			}
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 
@@ -102,7 +102,7 @@ public class MapDisplay implements getPositions{
 		}
 	}
 
-
+//initialises the canvas and renders the image onto it
 	public void initialiseCanvas() {
 		mainCanvas = new Canvas(640,640);
 		currentCanvas = new Canvas(640, 640);
@@ -147,7 +147,7 @@ public class MapDisplay implements getPositions{
 				 tileSize, tileSize);
 		mapImage = mainCanvas.snapshot(null, null);
 	}
-
+//handles changes to the canvas, specifically the axe and boat
 	private void replaceTileInMainCanvasToOriginal(int col, int row) {
 		mainCanvas.getGraphicsContext2D().drawImage(
 				originalMapImage,
@@ -158,7 +158,7 @@ public class MapDisplay implements getPositions{
 				row * tileSize,
 				tileSize, tileSize);
 	}
-
+//draws the cursor onto the canvas
 	private void drawCursorToMainCanvas() {
 		mainCanvas.getGraphicsContext2D().drawImage(
 				cursor.imageOption[0], 0, 0,
@@ -167,7 +167,7 @@ public class MapDisplay implements getPositions{
 				cursor.cursorRows * tileSize,
 				tileSize, tileSize);
 	}
-	
+
 	private void updateCurrentCanvas() {
 		currentCanvas.getGraphicsContext2D().drawImage(
 				mapImage,
@@ -202,7 +202,7 @@ public class MapDisplay implements getPositions{
 
 	}
 
-
+//Handles cursor movements and updates the canvas accordinly
 	public void cursorUp() {
 		if (cursor.cursorRows > 0) {
 			replaceTileInMainCanvasToOriginal(cursor.cursorCols, cursor.cursorRows);
@@ -284,7 +284,7 @@ public class MapDisplay implements getPositions{
 					tileSize, tileSize);
 		}
 	}
-	
+//Handles the placement of the axe and boat
 	public int handleSetAxeRequest() {
 		int handleType;
 
@@ -320,6 +320,7 @@ public class MapDisplay implements getPositions{
 
     	return handleType;
 	}
+
 	public int handleSetBoatRequest() {
 		int handleType;
 
