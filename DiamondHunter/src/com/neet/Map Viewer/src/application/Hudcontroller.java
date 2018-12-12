@@ -6,7 +6,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 public class Hudcontroller {
-
+//Handles events when the user presses a key
 	@FXML
 	private void handleKeyAction(KeyEvent event) {
 
@@ -23,7 +23,7 @@ public class Hudcontroller {
 	    	Main.mapDisplay.cursorRight();
 	    }
 	}
-
+//The following two methods handles events when the user presses either the "Set Boat" or "Set Axe" buttons
 	@FXML
 	private void handleButtonActionAxe(ActionEvent event) {
 		Main.mapDisplay.handleSetAxeRequest();	
