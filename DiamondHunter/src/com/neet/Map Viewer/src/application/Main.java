@@ -9,7 +9,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 import javafx.fxml.FXMLLoader;
 
-
+//This is the main class that runs the application
 public class Main extends Application {
 	public static Stage primaryStage;
 	public static MapDisplay mapDisplay;
@@ -21,7 +21,7 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
+
 	@Override
 	public void start(Stage primaryStage){
 		Main.primaryStage = primaryStage;
@@ -31,7 +31,7 @@ public class Main extends Application {
         
 		showMap();
 		}
-	
+//this method calls the methods in MapDisplay to load the map and images files then renders them on a tile pane, which then gets displayed onto the application
 	public void showMap() {
 		mapDisplay = new MapDisplay();
 		mapDisplay.loadMapFile("./testmap.map");
@@ -55,7 +55,7 @@ public class Main extends Application {
 		root.setCenter(tile);
 		
 		}
-	
+//Initialises the application GUI based on the fxml file
 	public void initialise() {
         try {
             FXMLLoader loader = new FXMLLoader();
