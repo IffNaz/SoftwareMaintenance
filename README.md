@@ -17,7 +17,7 @@ Keys: UP, DOWN, LEFT, RIGHT arrow keys to move and SPACE to do the action.
 
 
 #### In Map Viewer Application:
-Keys: UP, LEFT, DOWN, RIGHT arrow keys or W,A,S,D to move the cursor. Clicking the "Set Boat" and "Set Axe" buttons allows you to set the positions of the boat and axe.
+Keys: UP, LEFT, DOWN, RIGHT arrow keys or W, A, S, D to move the cursor. Clicking the "Set Boat" and "Set Axe" buttons allows you to set the positions of the boat and axe.
 
 
 **Features:**
