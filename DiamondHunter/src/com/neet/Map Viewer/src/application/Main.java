@@ -25,7 +25,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage){
 		Main.primaryStage = primaryStage;
-        Main.primaryStage.setTitle("MapViewer");
+        Main.primaryStage.setTitle("Map Viewer");
 
         initialise();
         

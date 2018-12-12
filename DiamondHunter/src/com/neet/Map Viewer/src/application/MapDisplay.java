@@ -38,7 +38,6 @@ public class MapDisplay implements getPositions{
 	public int numRows;
 	
 	public MapCursor cursor;
-	public boolean cursorColor = false;
 
 	private int currentNumCols;
 	private int currentNumRows;
@@ -143,7 +142,7 @@ public class MapDisplay implements getPositions{
 		originalMapImage = mainCanvas.snapshot(null, null);
 		drawCursorToMainCanvas();
 		currentCanvas.getGraphicsContext2D().drawImage(
-				cursor.imageOption[cursor.current], 0, 0, tileSize, tileSize,
+				cursor.imageOption[0], 0, 0, tileSize, tileSize,
 				 cursor.cursorCols * tileSize, cursor.cursorRows * tileSize,
 				 tileSize, tileSize);
 		mapImage = mainCanvas.snapshot(null, null);
@@ -162,7 +161,7 @@ public class MapDisplay implements getPositions{
 
 	private void drawCursorToMainCanvas() {
 		mainCanvas.getGraphicsContext2D().drawImage(
-				cursor.imageOption[cursor.current], 0, 0,
+				cursor.imageOption[0], 0, 0,
 				tileSize, tileSize,
 				cursor.cursorCols * tileSize,
 				cursor.cursorRows * tileSize,
@@ -193,23 +192,9 @@ public class MapDisplay implements getPositions{
 		}
 
 	}
-
-	private void changeCursorColor() {
-		if (cursorColor == true) {
-			cursor.current = tileType[cursor.cursorRows][cursor.cursorCols];
-		}
-		else {
-			cursor.current = 2;
-		}
-	}
 	
 	public void turningOnCursorColor() {
-		cursorColor = true;
-
-		changeCursorColor();
-
 		replaceTileInMainCanvasToOriginal(cursor.cursorCols, cursor.cursorRows);
-
 		updateItemsDraw();
 		drawCursorToMainCanvas();
 		mapImage = mainCanvas.snapshot(null, null);
@@ -223,7 +208,6 @@ public class MapDisplay implements getPositions{
 			replaceTileInMainCanvasToOriginal(cursor.cursorCols, cursor.cursorRows);
 
 			cursor.cursorRows --;
-			changeCursorColor();
 
 			updateItemsDraw();
 			drawCursorToMainCanvas();
@@ -240,7 +224,6 @@ public class MapDisplay implements getPositions{
 			replaceTileInMainCanvasToOriginal(cursor.cursorCols, cursor.cursorRows);
 
 			cursor.cursorRows ++;
-			changeCursorColor();
 
 			updateItemsDraw();
 			drawCursorToMainCanvas();
@@ -257,7 +240,6 @@ public class MapDisplay implements getPositions{
 			replaceTileInMainCanvasToOriginal(cursor.cursorCols, cursor.cursorRows);
 
 			cursor.cursorCols --;
-			changeCursorColor();
 
 			updateItemsDraw();
 			drawCursorToMainCanvas();
@@ -273,7 +255,6 @@ public class MapDisplay implements getPositions{
 		if (cursor.cursorCols < numCols - 1 ) {
 			replaceTileInMainCanvasToOriginal(cursor.cursorCols, cursor.cursorRows);
 			cursor.cursorCols ++;
-			changeCursorColor();
 
 			updateItemsDraw();
 			drawCursorToMainCanvas();
@@ -306,8 +287,6 @@ public class MapDisplay implements getPositions{
 	
 	public int handleSetAxeRequest() {
 		int handleType;
-		cursorColor = false;
-		changeCursorColor();
 
 		replaceTileInMainCanvasToOriginal(cursor.cursorCols, cursor.cursorRows);
 		if (tileType[cursor.cursorRows][cursor.cursorCols] == 1) {
@@ -343,8 +322,6 @@ public class MapDisplay implements getPositions{
 	}
 	public int handleSetBoatRequest() {
 		int handleType;
-		cursorColor = false;
-		changeCursorColor();
 
 		replaceTileInMainCanvasToOriginal(cursor.cursorCols, cursor.cursorRows);
 
