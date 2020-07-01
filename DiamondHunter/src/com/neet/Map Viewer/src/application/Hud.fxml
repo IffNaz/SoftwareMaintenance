@@ -7,8 +7,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Hudcontroller">
+<BorderPane onKeyPressed="#handleKeyAction" prefHeight="685.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Hudcontroller">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -24,11 +25,23 @@
       </VBox>
    </top>
    <bottom>
-      <HBox prefHeight="20.0" prefWidth="520.0" BorderPane.alignment="CENTER">
+      <HBox spacing="2.0" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="18.0" prefWidth="94.0" text="Map Display" />
-            <Button mnemonicParsing="false" text="Set Axe" />
-            <Button mnemonicParsing="false" text="Set Boat" />
+            <Label prefHeight="24.0" prefWidth="94.0" text="Map Display">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin></Label>
+            <Button mnemonicParsing="false" onAction="#handleButtonActionAxe" text="Set Axe">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#handleButtonActionBoat" text="Set Boat">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin></Button>
          </children>
          <BorderPane.margin>
             <Insets />
@@ -36,6 +49,12 @@
          <padding>
             <Insets bottom="2.0" left="2.0" top="2.0" />
          </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </HBox>
    </bottom>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
 </BorderPane>
